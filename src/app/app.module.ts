@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,6 +15,12 @@ import { PagenotComponent } from './components/pagenot/pagenot.component';
 
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { FooterComponent } from './components/footer/footer.component';
+
+//Material Modules
+import {MatButtonModule} from '@angular/material/button';
+import { AboutComponent } from './components/about/about.component';
+
 
 @NgModule({
   declarations: [
@@ -26,13 +33,17 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
     DashboardComponent,
     ProfileComponent,
     PagenotComponent,
+    FooterComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     FlashMessagesModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [ValidateService],
   bootstrap: [AppComponent]
