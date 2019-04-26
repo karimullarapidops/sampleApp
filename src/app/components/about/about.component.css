@@ -1,0 +1,33 @@
+.container{
+    padding: 120px;
+}
+h1{
+    font-size: 2rem;
+}
+p{
+    font-size: 1.2rem;
+}
+font{
+    font-weight: 600;
+}
+@media only screen and (max-width:700px){
+    .container{
+        padding:20px;
+    }
+}
+
+.banner{
+    background-color: tomato;
+    height: auto;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#about{
+    background-color: black;
+    background-image: url('https://raw.githubusercontent.com/karimullarapidops/SmartaSolutions/master/src/assets/images/about-bg.jpg');
+    width:100%;
+}

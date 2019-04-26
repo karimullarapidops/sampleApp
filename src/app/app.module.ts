@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,7 +14,14 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PagenotComponent } from './components/pagenot/pagenot.component';
 
 import { ValidateService } from './services/validate.service';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { FooterComponent } from './components/footer/footer.component';
+
+// Material components
+import {MatButtonModule} from '@angular/material/button';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -26,15 +34,19 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
     DashboardComponent,
     ProfileComponent,
     PagenotComponent,
+    FooterComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     FlashMessagesModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    MatButtonModule,
+    BrowserAnimationsModule
   ],
-  providers: [ValidateService],
+  providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,42 +1,37 @@
-<!-- <nav class="navbar navbar-default" style="background-color: #E44236">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" routerLink="">MEAN AUTH APP</a>
-    </div>
-    <div id="navbar" class="collapse navbar-collapse" >
-      <ul class="nav navbar-nav navbar-left" >
-       <li ><a routerLink="/home" class="navigation-item">Home</a></li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li><a routerLink="/login" class="navigation-item">Login</a></li>
-        <li><a routerLink="/register" class="navigation-item">Register</a></li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
-
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #E44236">
-  <a class="navbar-brand" routerLink="/">MEAN AUTH APP</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4BCFFA">
+  <a class="navbar-brand" routerLink="/home">Mean Auth</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-        <ul class="nav navbar-nav navbar-left" >
-            <li ><a routerLink="/home" class="navigation-item">Home</a></li>
-        </ul>
-    
-      <ul class="nav navbar-nav navbar-right">
-          <li><a routerLink="/login" class="navigation-item">Login</a></li>
-          <li><a routerLink="/register" class="navigation-item">Register</a></li>
-      </ul>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li  class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/dashboard" *ngIf="isLoggedIn">Dashboard<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li   class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/profile"  *ngIf="isLoggedIn">Profile<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/about">About<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li  class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/login" *ngIf="!isLoggedIn">Login</a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/register" *ngIf="!isLoggedIn">Register</a>
+      </li>
+
+      <li  class="nav-item" routerLinkActive="active">
+          <a class="nav-link" (click)="onLogoutClick()" routerLink="/" *ngIf="isLoggedIn">Logout</a>
+      </li>
+    </ul>
   </div>
 </nav>

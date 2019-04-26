@@ -6,15 +6,19 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PagenotComponent } from './components/pagenot/pagenot.component';
+import { AboutComponent } from './components/about/about.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent},
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent},
-  { path: 'profile', component: ProfileComponent},
-  { path: '**', component: PagenotComponent}
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] }, // canActivate: [AuthGuard]
+  { path: 'page-not-found', component: PagenotComponent},
+  { path: '**', redirectTo: '/page-not-found'}
 ];
 
 @NgModule({
@@ -27,4 +31,5 @@ export const routingComponents = [ HomeComponent,
                                    LoginComponent,
                                    DashboardComponent,
                                    ProfileComponent,
+                                   AboutComponent,
                                    PagenotComponent ];

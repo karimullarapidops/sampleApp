@@ -1,0 +1,49 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+section {
+    padding: 8rem 0 1rem 0;
+  }
+  p{
+      font-weight: 600;
+  }
+  section a{
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 11pt;
+  }
+  section a:hover{
+    color:#000;
+  }
+ .col-lg-8 hr {
+    max-width: 150px;
+    border-width: 3px;
+    border-color: rgb(30, 31, 92);
+  }
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+  
+  footer p {
+    font-size: 13px;
+    margin: 0;
+  }
+  
+  footer ul {
+    margin-bottom: 0;
+  }
+  
+  footer ul li a {
+    font-size: 12px;
+  }
+  
+  footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li a.active {
+    text-decoration: none;
+  }
